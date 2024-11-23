@@ -2,21 +2,33 @@
 
 <h3>Dupli Faktorijel Kalkulator</h3>
 
-<input type="number" @bind="inputNumber" />
-<button @onclick="CalculateDoubleFactorial">Izračunaj</button>
+<input type="number" @bind="pocetnibr" />
+<button @onclick="ForLoop">Izračunaj (For Petlja)</button>
+<button @onclick="WhileLoop">Izračunaj (While Petlja)</button>
 
-<p>Rezultat: @result</p>
+<p>Rezultat: @rezzz</p>
 
 @code {
-    private int inputNumber = 0;
-    private long result = 1;
+    private int pocetnibr = 0;
+    private long rezzz = 1;
 
-    private void CalculateDoubleFactorial()
+    private void ForLoop()
     {
-        result = 1;
-        for (int i = inputNumber; i > 1; i -= 2)
+        rezzz = 1;
+        for (int i = pocetnibr; i > 1; i -= 2)
         {
-            result *= i;
+            rezzz *= i;
+        }
+    }
+
+    private void WhileLoop()
+    {
+        rezzz = 1;
+        int i = pocetnibr;
+        while (i > 1)
+        {
+            rezzz *= i;
+            i -= 2;
         }
     }
 }
