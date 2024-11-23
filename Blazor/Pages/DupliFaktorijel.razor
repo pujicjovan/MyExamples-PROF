@@ -1,0 +1,22 @@
+﻿@page "/dupli-faktorijel"
+
+<h3>Dupli Faktorijel Kalkulator</h3>
+
+<input type="number" @bind="inputNumber" />
+<button @onclick="CalculateDoubleFactorial">Izračunaj</button>
+
+<p>Rezultat: @result</p>
+
+@code {
+    private int inputNumber = 0;
+    private long result = 1;
+
+    private void CalculateDoubleFactorial()
+    {
+        result = 1;
+        for (int i = inputNumber; i > 1; i -= 2)
+        {
+            result *= i;
+        }
+    }
+}
